@@ -5,6 +5,7 @@
 	<title>Make Rama Drunk | Happy birthday Rama</title>
 	<meta name="title" content="Make Rama Drunk | Happy birthday Rama">
 	<meta name="description" content="Kutti Rama embarks on another world tour, but this time with a twist. ">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
@@ -28,7 +29,7 @@
 			text-align: center;
 			background: #000;
 		}
-		iframe{
+		.web iframe{
 			width: calc(100vw - 23px);
 			height: calc(100vh - 4px);
 		}
@@ -44,18 +45,40 @@
 			bottom: 0;
 			opacity: 0;
 		}
+		.mob{
+			display: none;
+		}
+		.mob iframe{
+			width: 100vw;
+			height: 100vh;
+		}
+		@media(max-width: 800px){
+			.web{
+				display: none;
+			}
+			.mob{
+				display: block;
+			}
+		}
 	</style>
 </head>
 <body>
-	<iframe style="border: none;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXmeci1WKwXwrG46tlynP1M%2FMake-Rama-Drunk%3Fpage-id%3D55%253A0%26node-id%3D101%253A2%26viewport%3D304%252C328%252C0.07795622199773788%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+	<div class="web">
+		<iframe style="border: none;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXmeci1WKwXwrG46tlynP1M%2FMake-Rama-Drunk%3Fpage-id%3D55%253A0%26node-id%3D101%253A2%26viewport%3D304%252C328%252C0.07795622199773788%26scaling%3Dmin-zoom" allowfullscreen></iframe>
 
-	<button id="bgSoundInitiator" onclick="playAudio()">Click me</button>
-	<audio autoplay loop id="playAudio">
-		<source src="mixkit-dancing-fit-45.mp3">
-	</audio>
+		<button id="bgSoundInitiator" onclick="playAudio()">Click me</button>
+		<audio autoplay loop id="playAudio">
+			<source src="mixkit-dancing-fit-45.mp3">
+		</audio>
+	</div>
+
+	<div class="mob">
+		<iframe style="border: none;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXmeci1WKwXwrG46tlynP1M%2FMake-Rama-Drunk%3Fpage-id%3D190%253A60%26node-id%3D190%253A73%26viewport%3D609%252C616%252C0.9185701012611389%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+	</div>
 
 	<script type="text/javascript">
 		function playAudio(){
+			console.log("Clicked")
 			document.getElementById("playAudio").play();
 			setTimeout(()=>{
 				document.getElementById("bgSoundInitiator").style.visibility="hidden";
