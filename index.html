@@ -32,9 +32,40 @@
 			width: calc(100vw - 23px);
 			height: calc(100vh - 4px);
 		}
+		#bgSoundInitiator{
+			position: fixed;
+			cursor: pointer;
+			height: 100vh;
+			width: 100vw;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			opacity: 0;
+		}
 	</style>
 </head>
 <body>
-	<iframe style="border: none;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXmeci1WKwXwrG46tlynP1M%2FMake-Rama-Drunk%3Fpage-id%3D55%253A0%26node-id%3D55%253A1%26viewport%3D304%252C328%252C0.07795622199773788%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+	<iframe style="border: none;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXmeci1WKwXwrG46tlynP1M%2FMake-Rama-Drunk%3Fpage-id%3D55%253A0%26node-id%3D101%253A2%26viewport%3D304%252C328%252C0.07795622199773788%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+
+	<button id="bgSoundInitiator" onclick="playAudio()">Click me</button>
+	<audio autoplay loop id="playAudio">
+		<source src="mixkit-dancing-fit-45.mp3">
+	</audio>
+
+
+
+
+	<script type="text/javascript">
+		function playAudio(){
+			document.getElementById("playAudio").play();
+			setTimeout(()=>{
+				document.getElementById("bgSoundInitiator").style.visibility="hidden";
+			}, 0);
+		}
+	</script>
+
+
 </body>
 </html>
